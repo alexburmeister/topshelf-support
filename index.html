@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TopShelf Books — Support</title>
+  <title>TopShelf Books — Support & Privacy</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -73,6 +73,28 @@
       font-weight: 400;
     }
 
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 16px;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+
     .content {
       max-width: 600px;
       margin: 0 auto;
@@ -94,6 +116,19 @@
       font-weight: 400;
       margin-bottom: 12px;
       color: var(--accent);
+    }
+
+    .card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+      margin-top: 16px;
+    }
+
+    .card h3:first-of-type {
+      margin-top: 4px;
     }
 
     .card p, .card li {
@@ -148,17 +183,21 @@
     .faq-item:first-of-type { border-top: none; padding-top: 0; }
 
     .faq-item h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
+      margin-top: 0;
     }
 
     .faq-item p {
       font-size: 0.9rem;
       line-height: 1.6;
       color: var(--muted);
+    }
+
+    .last-updated {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 4px;
+      margin-bottom: 12px;
     }
 
     footer {
@@ -176,21 +215,26 @@
     <div class="hero-icon">📚</div>
     <h1>TopShelf Books</h1>
     <p>Rank your books. Find your taste.</p>
+    <div class="nav-links">
+      <a href="#support">Support</a>
+      <a href="#faq">FAQ</a>
+      <a href="#privacy">Privacy Policy</a>
+    </div>
   </div>
 
   <div class="content">
 
-    <div class="card">
+    <div class="card" id="support">
       <h2>Contact Us</h2>
       <p>Have a question, found a bug, or want to share feedback? We'd love to hear from you.</p>
       <br>
-      <a href="mailto:unihockey20@googlemail.com" class="contact-link">
+      <a href="mailto:topshelfbooks.app@gmail.com" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 4-10 8L2 4"/></svg>
-        unihockey20@googlemail.com
+        topshelfbooks.app@gmail.com
       </a>
     </div>
 
-    <div class="card">
+    <div class="card" id="faq">
       <h2>FAQ</h2>
 
       <div class="faq-item">
@@ -215,8 +259,56 @@
 
       <div class="faq-item">
         <h3>How do I delete my account?</h3>
-        <p>Contact us at the email above and we'll process your account deletion within 48 hours. All your data will be permanently removed.</p>
+        <p>You can delete your account from the Settings screen within the app, or contact us at the email above and we'll process your account deletion within 48 hours. All your data will be permanently removed.</p>
       </div>
+    </div>
+
+    <div class="card" id="privacy">
+      <h2>Privacy Policy</h2>
+      <p class="last-updated">Last updated: March 4, 2026</p>
+
+      <h3>Overview</h3>
+      <p>TopShelf Books ("we", "our", "the app") is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights regarding your personal information.</p>
+
+      <h3>Data We Collect</h3>
+      <ul>
+        <li><strong>Account information:</strong> your email address and display name, used to create and identify your account.</li>
+        <li><strong>Profile information:</strong> optional profile photo, bio, and location that you choose to provide.</li>
+        <li><strong>Reading activity:</strong> books you rank, your bookshelf, wishlist, reviews, and reading status. This is core to the app's functionality.</li>
+        <li><strong>Social activity:</strong> who you follow, comments, likes, and book recommendations you send or receive.</li>
+        <li><strong>Usage data:</strong> basic app usage events (such as app opens) to help us understand how the app is used and improve it. This data is not shared with third parties.</li>
+        <li><strong>Push notification tokens:</strong> if you enable notifications, we store your device token to deliver notifications.</li>
+      </ul>
+
+      <h3>How We Use Your Data</h3>
+      <p>We use your data solely to provide and improve the TopShelf experience. This includes displaying your ranked bookshelf, connecting you with other readers, calculating taste match scores, delivering notifications, and understanding how features are used.</p>
+
+      <h3>Data Sharing</h3>
+      <p>We do not sell, rent, or share your personal data with third parties for marketing purposes. Your data is stored securely on our servers and is only accessible to you and (where applicable) other TopShelf users based on your privacy settings.</p>
+
+      <h3>Third-Party Services</h3>
+      <p>TopShelf uses the following third-party services to operate:</p>
+      <ul>
+        <li><strong>Supabase:</strong> for secure database hosting and user authentication.</li>
+        <li><strong>Expo:</strong> for app delivery and push notifications.</li>
+        <li><strong>Open Library:</strong> for book metadata and cover images.</li>
+      </ul>
+      <p>These services have their own privacy policies governing how they handle data.</p>
+
+      <h3>Data Retention</h3>
+      <p>We retain your data for as long as your account is active. If you delete your account, all associated data is permanently removed from our servers within 30 days.</p>
+
+      <h3>Your Rights</h3>
+      <p>You have the right to access, correct, or delete your personal data at any time. You can update your profile information directly within the app. To request full account deletion or a copy of your data, contact us at topshelfbooks.app@gmail.com.</p>
+
+      <h3>Children's Privacy</h3>
+      <p>TopShelf is not directed at children under 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected data from a child under 13, we will delete it promptly.</p>
+
+      <h3>Changes to This Policy</h3>
+      <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated revision date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+      <h3>Contact</h3>
+      <p>If you have any questions about this privacy policy, contact us at <a href="mailto:topshelfbooks.app@gmail.com" style="color: var(--accent); font-weight: 600;">topshelfbooks.app@gmail.com</a>.</p>
     </div>
 
     <div class="card">
