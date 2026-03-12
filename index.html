@@ -1,326 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TopShelf Books — Support & Privacy</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ink: #2c3e50;
-      --muted: #7f8c8d;
-      --accent: #104862;
-      --bg: #fafaf9;
-      --card: #ffffff;
-      --border: #f0eeeb;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 24px 48px;
-      background: linear-gradient(180deg, #104862 0%, #1a6b8a 100%);
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 48px;
-      background: var(--bg);
-      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    }
-
-    .hero-icon {
-      width: 72px;
-      height: 72px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 18px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 36px;
-      margin-bottom: 20px;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .hero p {
-      font-size: 1rem;
-      opacity: 0.8;
-      font-weight: 400;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 16px;
-    }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 2px;
-      transition: all 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
-    }
-
-    .content {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 32px 24px 80px;
-      flex: 1;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px 24px;
-      margin-bottom: 20px;
-    }
-
-    .card h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 12px;
-      color: var(--accent);
-    }
-
-    .card h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
-      margin-top: 16px;
-    }
-
-    .card h3:first-of-type {
-      margin-top: 4px;
-    }
-
-    .card p, .card li {
-      font-size: 0.95rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      color: #2c3e50;
       line-height: 1.7;
-      color: var(--muted);
     }
-
-    .card ul {
-      list-style: none;
-      padding: 0;
+    header {
+      background: #104862;
+      color: #fff;
+      text-align: center;
+      padding: 48px 24px 32px;
     }
-
-    .card li {
-      padding: 6px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .card li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
+    header .icon { font-size: 48px; margin-bottom: 12px; }
+    header h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+    header p { font-size: 15px; opacity: 0.8; }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 8px;
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 1.05rem;
+      background: #0d3d54;
+      padding: 14px 24px;
+    }
+    nav a {
+      color: #fff;
       text-decoration: none;
-      padding: 12px 0;
-      transition: opacity 0.2s;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.12);
+      transition: background 0.2s;
     }
-
-    .contact-link:hover { opacity: 0.7; }
-
-    .contact-link svg {
-      width: 20px;
-      height: 20px;
+    nav a:hover { background: rgba(255,255,255,0.25); }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
     }
-
-    .faq-item {
-      border-top: 1px solid var(--border);
-      padding: 16px 0;
+    section { margin-bottom: 64px; }
+    h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #104862;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
     }
-
-    .faq-item:first-of-type { border-top: none; padding-top: 0; }
-
-    .faq-item h3 {
-      margin-top: 0;
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin: 24px 0 8px;
     }
-
-    .faq-item p {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: var(--muted);
+    p { font-size: 15px; color: #4a4a4a; margin-bottom: 12px; }
+    ul {
+      margin: 8px 0 16px 20px;
+      font-size: 15px;
+      color: #4a4a4a;
     }
-
-    .last-updated {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-top: 4px;
-      margin-bottom: 12px;
+    ul li { margin-bottom: 6px; }
+    a { color: #104862; }
+    .contact-box {
+      background: #f5f9fc;
+      border: 1px solid #d0e4ef;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
     }
-
+    .contact-box a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #104862;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .badge {
+      display: inline-block;
+      background: #e74c3c;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
     footer {
       text-align: center;
       padding: 24px;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: #95a5a6;
+      border-top: 1px solid #f0f0f0;
     }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <div class="hero-icon">📚</div>
-    <h1>TopShelf Books</h1>
-    <p>Rank your books. Find your taste.</p>
-    <div class="nav-links">
-      <a href="#support">Support</a>
-      <a href="#faq">FAQ</a>
-      <a href="#privacy">Privacy Policy</a>
-    </div>
-  </div>
+<header>
+  <div class="icon">📚</div>
+  <h1>TopShelf Books</h1>
+  <p>Rank your books. Find your taste.</p>
+</header>
 
-  <div class="content">
+<nav>
+  <a href="#support">Support</a>
+  <a href="#faq">FAQ</a>
+  <a href="#terms">Terms of Service</a>
+  <a href="#privacy">Privacy Policy</a>
+</nav>
 
-    <div class="card" id="support">
-      <h2>Contact Us</h2>
+<main>
+
+  <!-- SUPPORT -->
+  <section id="support">
+    <h2>Contact Us</h2>
+    <div class="contact-box">
       <p>Have a question, found a bug, or want to share feedback? We'd love to hear from you.</p>
-      <br>
-      <a href="mailto:unihockey20@googlemail.com" class="contact-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 4-10 8L2 4"/></svg>
-        unihockey20@googlemail.com
-      </a>
+      <a href="mailto:unihockey20@googlemail.com">unihockey20@googlemail.com</a>
     </div>
+  </section>
 
-    <div class="card" id="faq">
-      <h2>FAQ</h2>
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>FAQ</h2>
 
-      <div class="faq-item">
-        <h3>What is TopShelf?</h3>
-        <p>TopShelf replaces star ratings with a ranked bookshelf. Instead of rating every book 4 stars, you rank books against each other through quick head-to-head matchups to build a true reflection of your taste.</p>
-      </div>
+    <h3>What is TopShelf?</h3>
+    <p>TopShelf replaces star ratings with a ranked bookshelf. Instead of rating every book 4 stars, you rank books against each other through quick head-to-head matchups to build a true reflection of your taste.</p>
 
-      <div class="faq-item">
-        <h3>How does ranking work?</h3>
-        <p>After adding a book, you go through face-off rounds — picking which book you liked more. Your shelf builds organically from your favorite down to the ones that were just okay.</p>
-      </div>
+    <h3>How does ranking work?</h3>
+    <p>After adding a book, you go through face-off rounds — picking which book you liked more. Your shelf builds organically from your favorite down to the ones that were just okay.</p>
 
-      <div class="faq-item">
-        <h3>What is a Taste Match?</h3>
-        <p>When you and another reader have ranked 3 or more of the same books, TopShelf calculates a taste match score showing how similar your reading preferences are.</p>
-      </div>
+    <h3>What is a Taste Match?</h3>
+    <p>When you and another reader have ranked 3 or more of the same books, TopShelf calculates a taste match score showing how similar your reading preferences are.</p>
 
-      <div class="faq-item">
-        <h3>Is TopShelf free?</h3>
-        <p>Yes. TopShelf is completely free to use.</p>
-      </div>
+    <h3>Is TopShelf free?</h3>
+    <p>Yes. TopShelf is completely free to use.</p>
 
-      <div class="faq-item">
-        <h3>How do I delete my account?</h3>
-        <p>You can delete your account from the Settings screen within the app, or contact us at the email above and we'll process your account deletion within 48 hours. All your data will be permanently removed.</p>
-      </div>
-    </div>
+    <h3>How do I delete my account?</h3>
+    <p>You can delete your account from the Settings screen within the app, or contact us at <a href="mailto:unihockey20@googlemail.com">unihockey20@googlemail.com</a> and we'll process your account deletion within 48 hours. All your data will be permanently removed.</p>
+  </section>
 
-    <div class="card" id="privacy">
-      <h2>Privacy Policy</h2>
-      <p class="last-updated">Last updated: March 4, 2026</p>
+  <!-- TERMS OF SERVICE -->
+  <section id="terms">
+    <h2>Terms of Service</h2>
+    <p>Last updated: March 12, 2026</p>
 
-      <h3>Overview</h3>
-      <p>TopShelf Books ("we", "our", "the app") is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights regarding your personal information.</p>
+    <h3>Acceptance of Terms</h3>
+    <p>By creating an account or using TopShelf Books, you agree to these Terms of Service. If you do not agree, please do not use the app.</p>
 
-      <h3>Data We Collect</h3>
-      <ul>
-        <li><strong>Account information:</strong> your email address and display name, used to create and identify your account.</li>
-        <li><strong>Profile information:</strong> optional profile photo, bio, and location that you choose to provide.</li>
-        <li><strong>Reading activity:</strong> books you rank, your bookshelf, wishlist, reviews, and reading status. This is core to the app's functionality.</li>
-        <li><strong>Social activity:</strong> who you follow, comments, likes, and book recommendations you send or receive.</li>
-        <li><strong>Usage data:</strong> basic app usage events (such as app opens) to help us understand how the app is used and improve it. This data is not shared with third parties.</li>
-        <li><strong>Push notification tokens:</strong> if you enable notifications, we store your device token to deliver notifications.</li>
-      </ul>
+    <h3>User-Generated Content</h3>
+    <p>TopShelf allows users to post content including book rankings, comments, and profile information. You are solely responsible for the content you post. By submitting content, you confirm that it does not violate these terms or any applicable laws.</p>
 
-      <h3>How We Use Your Data</h3>
-      <p>We use your data solely to provide and improve the TopShelf experience. This includes displaying your ranked bookshelf, connecting you with other readers, calculating taste match scores, delivering notifications, and understanding how features are used.</p>
+    <h3>Zero Tolerance for Objectionable Content <span class="badge">STRICT</span></h3>
+    <p>TopShelf has a strict zero-tolerance policy for objectionable content and abusive behavior. The following are prohibited:</p>
+    <ul>
+      <li>Hate speech, harassment, or threats directed at any individual or group</li>
+      <li>Sexually explicit or violent content</li>
+      <li>Spam, misinformation, or misleading content</li>
+      <li>Content that violates the privacy or intellectual property rights of others</li>
+      <li>Impersonation of other users or public figures</li>
+      <li>Any content that is illegal under applicable law</li>
+    </ul>
+    <p>Violations may result in immediate account suspension or permanent removal without notice.</p>
 
-      <h3>Data Sharing</h3>
-      <p>We do not sell, rent, or share your personal data with third parties for marketing purposes. Your data is stored securely on our servers and is only accessible to you and (where applicable) other TopShelf users based on your privacy settings.</p>
+    <h3>Reporting & Moderation</h3>
+    <p>Users can report objectionable content or abusive users directly within the app using the report flag (🚩) on any post or profile. Users can also block other users to prevent further interaction.</p>
+    <p>All reports are reviewed by our team within 24 hours. Confirmed violations result in content removal and, where appropriate, account termination.</p>
+    <p>To report an issue outside the app, contact us at <a href="mailto:unihockey20@googlemail.com">unihockey20@googlemail.com</a>. We are committed to responding within 24 hours.</p>
 
-      <h3>Third-Party Services</h3>
-      <p>TopShelf uses the following third-party services to operate:</p>
-      <ul>
-        <li><strong>Supabase:</strong> for secure database hosting and user authentication.</li>
-        <li><strong>Expo:</strong> for app delivery and push notifications.</li>
-        <li><strong>Open Library:</strong> for book metadata and cover images.</li>
-      </ul>
-      <p>These services have their own privacy policies governing how they handle data.</p>
+    <h3>Account Termination</h3>
+    <p>We reserve the right to suspend or terminate any account that violates these terms, at our sole discretion and without prior notice. You may also delete your account at any time from the Settings screen in the app.</p>
 
-      <h3>Data Retention</h3>
-      <p>We retain your data for as long as your account is active. If you delete your account, all associated data is permanently removed from our servers within 30 days.</p>
+    <h3>Disclaimer of Warranties</h3>
+    <p>TopShelf is provided "as is" without warranties of any kind. We do not guarantee uninterrupted or error-free service.</p>
 
-      <h3>Your Rights</h3>
-      <p>You have the right to access, correct, or delete your personal data at any time. You can update your profile information directly within the app. To request full account deletion or a copy of your data, contact us at unihockey20@googlemail.com.</p>
+    <h3>Changes to These Terms</h3>
+    <p>We may update these terms from time to time. Continued use of the app after changes are posted constitutes acceptance of the updated terms.</p>
 
-      <h3>Children's Privacy</h3>
-      <p>TopShelf is not directed at children under 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected data from a child under 13, we will delete it promptly.</p>
+    <h3>Contact</h3>
+    <p>Questions about these terms? Contact us at <a href="mailto:unihockey20@googlemail.com">unihockey20@googlemail.com</a>.</p>
+  </section>
 
-      <h3>Changes to This Policy</h3>
-      <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated revision date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+  <!-- PRIVACY POLICY -->
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <p>Last updated: March 4, 2026</p>
 
-      <h3>Contact</h3>
-      <p>If you have any questions about this privacy policy, contact us at <a href="mailto:unihockey20@googlemail.com" style="color: var(--accent); font-weight: 600;">unihockey20@googlemail.com</a>.</p>
-    </div>
+    <h3>Overview</h3>
+    <p>TopShelf Books ("we", "our", "the app") is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights regarding your personal information.</p>
 
-    <div class="card">
-      <h2>About</h2>
-      <p>TopShelf is built for readers who have opinions — people who know the difference between a book they liked and a book that changed them.</p>
-    </div>
+    <h3>Data We Collect</h3>
+    <ul>
+      <li><strong>Account information:</strong> your email address and display name, used to create and identify your account.</li>
+      <li><strong>Profile information:</strong> optional profile photo, bio, and location that you choose to provide.</li>
+      <li><strong>Reading activity:</strong> books you rank, your bookshelf, wishlist, reviews, and reading status. This is core to the app's functionality.</li>
+      <li><strong>Social activity:</strong> who you follow, comments, likes, and book recommendations you send or receive.</li>
+      <li><strong>Usage data:</strong> basic app usage events (such as app opens) to help us understand how the app is used and improve it. This data is not shared with third parties.</li>
+      <li><strong>Push notification tokens:</strong> if you enable notifications, we store your device token to deliver notifications.</li>
+    </ul>
 
-  </div>
+    <h3>How We Use Your Data</h3>
+    <p>We use your data solely to provide and improve the TopShelf experience. This includes displaying your ranked bookshelf, connecting you with other readers, calculating taste match scores, delivering notifications, and understanding how features are used.</p>
 
-  <footer>
-    &copy; 2025 TopShelf Books. All rights reserved.
-  </footer>
+    <h3>Data Sharing</h3>
+    <p>We do not sell, rent, or share your personal data with third parties for marketing purposes. Your data is stored securely on our servers and is only accessible to you and (where applicable) other TopShelf users based on your privacy settings.</p>
+
+    <h3>Third-Party Services</h3>
+    <p>TopShelf uses the following third-party services to operate:</p>
+    <ul>
+      <li><strong>Supabase:</strong> for secure database hosting and user authentication.</li>
+      <li><strong>Expo:</strong> for app delivery and push notifications.</li>
+      <li><strong>Open Library:</strong> for book metadata and cover images.</li>
+    </ul>
+    <p>These services have their own privacy policies governing how they handle data.</p>
+
+    <h3>Data Retention</h3>
+    <p>We retain your data for as long as your account is active. If you delete your account, all associated data is permanently removed from our servers within 30 days.</p>
+
+    <h3>Your Rights</h3>
+    <p>You have the right to access, correct, or delete your personal data at any time. You can update your profile information directly within the app. To request full account deletion or a copy of your data, contact us at <a href="mailto:unihockey20@googlemail.com">unihockey20@googlemail.com</a>.</p>
+
+    <h3>Children's Privacy</h3>
+    <p>TopShelf is not directed at children under 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected data from a child under 13, we will delete it promptly.</p>
+
+    <h3>Changes to This Policy</h3>
+    <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated revision date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+    <h3>Contact</h3>
+    <p>If you have any questions about this privacy policy, contact us at <a href="mailto:unihockey20@googlemail.com">unihockey20@googlemail.com</a>.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <p>TopShelf is built for readers who have opinions — people who know the difference between a book they liked and a book that changed them.</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 TopShelf Books. All rights reserved.
+</footer>
 
 </body>
 </html>
+
